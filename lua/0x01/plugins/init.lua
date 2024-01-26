@@ -3,11 +3,20 @@ return {
 		'akinsho/bufferline.nvim',
 		version = "*",
 		config = function()
-			vim.keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-			vim.keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
-			vim.opt.termguicolors = true
-			require("bufferline").setup{}
+			require("bufferline").setup {}
 		end
 	},
 	'nvim-tree/nvim-web-devicons',
+	{
+		"folke/which-key.nvim",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		}
+	},
 }

@@ -1,4 +1,4 @@
-local map =vim.keymap.set
+local map = vim.keymap.set
 vim.g.mapleader = " "
 
 -- Moving between windows
@@ -7,7 +7,11 @@ map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
--- version control: neogit 
+-- Moving between buffers
+map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
+
+-- Version control: neogit
 map("n", "<leader>vc", "<cmd>Neogit<CR>")
 
 
@@ -53,4 +57,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- trouble
 map("n", "<leader>xx", function() require("trouble").toggle() end)
 
-
+-- [2] Telescope
+map('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files()<cr>")
+map('n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>")
+map('n', '<leader>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>")

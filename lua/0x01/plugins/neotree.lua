@@ -8,10 +8,10 @@ return {
 	config = function()
 		require("neo-tree").setup({
 			window = {
-				position = "right"
-			}
+				position = "current"
+			},
 		})
-		vim.keymap.set('n', '<C-t>', ':Neotree toggle<CR>', {
+		vim.keymap.set('n', '<C-t>', ':Neotree toggle position=right<CR>', {
 			noremap = true
 		})
 	end
