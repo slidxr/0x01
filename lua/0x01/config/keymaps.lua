@@ -1,4 +1,4 @@
-local map = vim.keymap.set
+local map =vim.keymap.set
 vim.g.mapleader = " "
 
 -- Moving between windows
@@ -6,6 +6,9 @@ map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+
+-- version control: neogit 
+map("n", "<leader>vc", "<cmd>Neogit<CR>")
 
 
 -- [1] LSP
@@ -49,3 +52,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- trouble
 map("n", "<leader>xx", function() require("trouble").toggle() end)
+
+
