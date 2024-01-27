@@ -19,6 +19,28 @@ return {
 		end
 	},
 	{
+		'echasnovski/mini.indentscope',
+		version = false,
+		config = function()
+			require('mini.indentscope').setup({
+				options = {
+					try_as_border = true
+				}
+			})
+		end
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		config = function()
+			require('ibl').setup({
+			scope = {
+				enabled = false
+			}
+		})
+		end
+	},
+	{
 		'nvimdev/dashboard-nvim',
 		event = 'VimEnter',
 		config = function()
