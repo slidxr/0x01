@@ -11,14 +11,13 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",
+				"bashls",
 				"clangd",
 				"gopls",
 				"rust_analyzer",
-				"jdtls",
 				"tsserver",
 				"pylsp",
 				"svelte",
-				"tailwindcss",
 			},
 			handlers = {
 				function(server_name)

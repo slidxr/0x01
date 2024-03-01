@@ -14,6 +14,8 @@ map("n", "]b", "<cmd>bnext<cr>", { desc = "Next buffer" })
 -- Version control: neogit
 map("n", "<leader>vc", "<cmd>Neogit<CR>")
 
+-- Undotree
+map('n', '<leader><F5>', vim.cmd.UndotreeToggle)
 
 -- [1] LSP
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -48,7 +50,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end, opts)
 		map('n', '<space>rn', vim.lsp.buf.rename, opts)
 		map({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-		map('n', '<space>f', function()
+		map('n', '<space>xf', function()
 			vim.lsp.buf.format { async = true }
 		end, opts)
 	end,

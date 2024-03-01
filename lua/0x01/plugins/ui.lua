@@ -14,8 +14,7 @@ return {
 	{
 		'nvim-lualine/lualine.nvim',
 		config = function()
-			require('lualine').setup({
-			})
+			require('lualine').setup({})
 		end
 	},
 	{
@@ -34,10 +33,23 @@ return {
 		main = "ibl",
 		config = function()
 			require('ibl').setup({
-			scope = {
-				enabled = false
-			}
-		})
+				scope = {
+					enabled = false
+				},
+				exclude = {
+					filetypes = {
+						"help",
+						"alpha",
+						"dashboard",
+						"neo-tree",
+						"Trouble",
+						"trouble",
+						"lazy",
+						"mason",
+						"toggleterm",
+					},
+				},
+			})
 		end
 	},
 	{
